@@ -53,6 +53,7 @@
         button:hover {
             background-color: #45a049;
         }
+		
     </style>
 </head>
 <body>
@@ -63,7 +64,7 @@
 
     <main>
 
-        <form action="submit_form.php" method="post" onsubmit="return validateForm()">
+         <form onsubmit="login(event)">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
@@ -93,6 +94,12 @@
 			alert("Valid username and password.");
             return true;
         }
+		
+		function login(event) {
+			event.preventDefault();
+			validateForm();
+			window.location.href = "welcome.html";
+		}
     </script>
 
 </body>
