@@ -1,7 +1,12 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Login Form</title>
-    <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+	<style>
 		body {
 			font-family: Arial, sans-serif;
 			background-color: #f4f4f4;
@@ -55,52 +60,31 @@
         }
 		
     </style>
-</head>
 <body>
 
     <header>
-        <h1>Login Page</h1>
+        <h1>Welcome Page</h1>
     </header>
 
     <main>
 
-         <form onsubmit="login(event)">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+        <h2>Welcome!</h2>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+        <form>
+            <label for="question1">Question 1:</label>
+            <input type="text" id="question1" name="question1" required>
 
-            <button type="submit">Submit</button>
+            <label for="question2">Question 2:</label>
+            <input type="text" id="question2" name="question2" required>
+
+            <button type="submit">Submit Quiz</button>
         </form>
-
-        <p>Don't have an account? <a href="registration.html">Register here</a>.</p>
 
     </main>
 
     <footer>
         <p>&copy; 2024 Lucas Benko</p>
     </footer>
-
-    <script>
-        function validateForm() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-
-            if (username === "" || password === "") {
-                alert("Please enter both username and password.");
-                return false;
-            }
-			alert("Valid username and password.");
-            return true;
-        }
-		
-		function login(event) {
-			event.preventDefault();
-			validateForm();
-			window.location.href = "welcome.html";
-		}
-    </script>
 
 </body>
 </html>
