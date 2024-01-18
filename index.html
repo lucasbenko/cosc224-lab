@@ -63,7 +63,7 @@
 
     <main>
 
-        <form action="submit_form.php" method="post">
+        <form action="submit_form.php" method="post" onsubmit="return validateForm()">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
@@ -73,11 +73,27 @@
             <button type="submit">Submit</button>
         </form>
 
+        <p>Don't have an account? <a href="registration.html">Register here</a>.</p>
+
     </main>
 
     <footer>
         <p>&copy; 2024 Lucas Benko</p>
     </footer>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                alert("Please enter both username and password.");
+                return false;
+            }
+			alert("Valid username and password.");
+            return true;
+        }
+    </script>
 
 </body>
 </html>
